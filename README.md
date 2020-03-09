@@ -17,14 +17,14 @@ you don't need to sign in via your institution's SSO to access all the resources
 if you can access all the resources on link.springer.com without sigining in, then you can start the script 
 as:
 
-> python scrape.py [series_url] [output_directory]
+    python scrape.py [series_url] [output_directory]
 
 If you don't, then your library might have an SSO to access Springer Link via a proxy. For 
 example, [this](https://libguides.colorado.edu/25295783) is the University of Colorado Boulder's SSO page 
 for Springer Link. Find the link to the series through the proxy. For example, [this](https://link-springer-com.colorado.idm.oclc.org/search?facet-series=%22666%22&facet-content-type=%22Book%22)
 is the link for the Undergraduate Text in Mathematics series on CU's proxy. Then, start the script as 
 
-> python scrape.py [series_url] [output_directory] --login
+    python scrape.py [series_url] [output_directory] --login
 
 A prompt for a username and password will appear. This is not guaranteed to work on any SSO, but should 
 work for CU's SSO.
