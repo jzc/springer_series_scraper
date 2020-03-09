@@ -55,8 +55,7 @@ try:
             book_pages.extend([b.get_attribute("href") for b in books])
             driver.find_element_by_xpath("//a[@class='next']").click()
         except Exception:
-            print("Error in retrieving books")
-            sys.exit(0)
+            break
 
     pdfs = []
 
