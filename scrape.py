@@ -58,9 +58,11 @@ try:
             break
 
     pdfs = []
+    n = len(book_pages)
+    nl = len(str(n))
 
-    for p in book_pages:
-        print(f"Downloading {p}")
+    for i, p in book_pages:
+        print(f"[ {i+1:{nl}d} / {n} ] Downloading {p}")
         try:
             driver.get(p)
             driver.find_element_by_link_text("Download book PDF").click()
