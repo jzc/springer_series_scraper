@@ -61,21 +61,19 @@ try:
     n = len(book_pages)
     nl = len(str(n))
 
-    for i, p in book_pages:
+    for i, p in enumerate(book_pages):
         print(f"[ {i+1:{nl}d} / {n} ] Downloading {p}")
+        
         try:
             driver.get(p)
             driver.find_element_by_link_text("Download book PDF").click()
 
-            
         except Exception:
             print(f"Couldn't download {p}")
             failed.append(p)
 
-except Exception:
-    pass
+finally:
+    driver.close()
 
-driver.close()
-
-with open("failed.txt", "w") as f:
-    f.write("\n".join(failed))
+    with open("failed.txt", "w") as f:
+        f.write("\n".join(failed))
